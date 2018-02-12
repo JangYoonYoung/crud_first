@@ -1,0 +1,14 @@
+<h1>게시물 목록 페이지</h1>
+<a href='/home/new'>새 글 쓰러가기</a>
+<br><br><br>
+
+<%@posts.each do |p|%> <!--each : 한 줄 한 줄 불러오기 위해서 -->
+<!--p 는 post 테이블의 각 행 -->
+    제목 : <%=p.title%><br> <!--루비코드는 =을 붙여줘야함-->
+    내용 : <%=p.content%><br>
+    <a href='/home/destroy/<%=p.id%>'>[삭제]</a>
+    <a href='/home/edit/<%=p.id%>'>[수정]</a><br>
+    <!--url로 post id 넘겨줌-->
+    -------------------------<br>
+<%end%> 
+<!--테이블 한 줄 씩 do~end 사이의 작업을 반복-->
