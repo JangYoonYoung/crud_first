@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   
   get 'home/destroy/:post_id' => 'home#destroy'
 
+  get 'home/destroy/:post_id' => 'post#destroy', as: 'post_destroy'
+  #as: 'post_destroy'  => 이 route를 post_destroy라는 이름으로 짧게 부르자!
+  #<%=link_to '삭제', post_destroy_path(post_id:post.id)%>
+  
   # /post_id : 주소가 문자 그대로 /post_id로 이동
   # /:post_id : /destroy/1 처럼 게시물의 id를 post_id에 저장
   #url을 통해 id 정보를 넘겨주고 싶을 땐 :을 써야함
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
   get 'home/edit/:post_id' => 'home#edit'
 
   post 'home/update/:post_id' => 'home#update'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
