@@ -1,0 +1,6 @@
+<%=form_tag(users_path, method: "post") do %>
+    이름 : <%=text_field_tag 'name' %><br>
+    이메일 : <%=text_field_tag 'eamil' %><br>
+    비밀번호 : <%=text_field_tag 'password' %><br>
+    <input type="submit" value="제출">
+<%end%>

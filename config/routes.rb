@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  # get 'users/new'
+
+  # get 'users/create'
+
   root 'home#index'
+  
+  resources:users
   
   get 'home/index'
 
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
   post 'home/create'
   
   get 'home/destroy/:post_id' => 'home#destroy'
-
+  
   get 'home/destroy/:post_id' => 'post#destroy', as: 'post_destroy'
   #as: 'post_destroy'  => 이 route를 post_destroy라는 이름으로 짧게 부르자!
   #<%=link_to '삭제', post_destroy_path(post_id:post.id)%>
